@@ -1,5 +1,7 @@
 import Foundation
+#if os(iOS)
 import GameAnalytics
+#endif
 import Firebase
 
 public enum Events: Sendable {
