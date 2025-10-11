@@ -7,10 +7,8 @@ let package = Package(
     name: "XCEvents",
     platforms: [
         .iOS(.v15),
-        .macOS(.v10_15),
     ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "XCEvents",
             targets: ["XCEvents"]
@@ -29,7 +27,6 @@ let package = Package(
                 .product(name: "FirebasePerformance", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
-//                .product(name: "GameAnalytics", package: "GA-SDK-IOS")
                 .product(name: "GameAnalytics", package: "GA-SDK-IOS", condition: .when(platforms: [.iOS]))
             ]
         ),

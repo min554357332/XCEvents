@@ -1,7 +1,5 @@
 import Foundation
-#if os(iOS)
 import GameAnalytics
-#endif
 import Firebase
 
 public enum Events: Sendable {
@@ -87,9 +85,7 @@ private extension Events {
 
 private extension Events {
     func game(_ event: String, parameters: Dictionary<String, AnyHashable>? = nil) async {
-#if os(iOS)
         GameAnalytics.addDesignEvent(withEventId: event, customFields: parameters)
-#endif
     }
 }
 
