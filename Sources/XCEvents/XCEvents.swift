@@ -67,6 +67,7 @@ extension Events {
                 nil
             }
             let event = self.event
+            alog("🔥 Loging: \(event)")
             await self.fireEvent(event, parameters: json)
         }
     }
@@ -100,3 +101,11 @@ private extension Events {
         }
     }
 }
+
+#if DEBUG
+func alog(_ format: String, _ args: any CVarArg...) {
+    NSLog(format, args)
+}
+#else
+func alog(_ format: String, _ args: any CVarArg...) {}
+#endif
